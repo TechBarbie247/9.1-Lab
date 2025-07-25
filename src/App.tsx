@@ -1,6 +1,8 @@
-import React from "react";
-import AlertBox from "./components/AlertBox/AlertBox";
-import { UserProfileCardProps } from "./components/UserProfileCard/UserProfileCard";
+import React from 'react';
+import AlertBox from './components/AlertBox/AlertBox';
+import './index.css';
+import ProductDisplay from './components/ProductDisplay/ProductDisplay';
+import  UserProfileCard from './components/UserProfileCard/UserProfileCard';
 
 function App() {
   return ( <div className="p-8">
