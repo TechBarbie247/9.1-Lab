@@ -1,17 +1,37 @@
 import React from 'react';
-import AlertBox from './components/AlertBox/AlertBox';
 import './index.css';
-import ProductDisplay from './components/ProductDisplay/ProductDisplay';
-import  UserProfileCard from './components/UserProfileCard/UserProfileCard';
 
-function App() {
-  return ( <div className="p-8">
-    <h1 className="text-2xl font-bold mb-4">My App </h1>
+import AlertBox from './components/AlertBox';
+import UserProfileCard from './components/UserProfileCard';
+import ProductDisplay from './components/ProductDisplay';
 
-<AlertBox type="success" message="This is a success alert!" onClose={() => alert('Alert closed!')}>
-</AlertBox>
-</div> 
-);
-}
+import type { User, Product } from './types';
+
+const App: React.FC = () => {
+  const user: User = {
+    id: 'u1',
+    name: 'Cheyenne',
+    email: 'cj@example.com',
+    role: 'Student',
+    avatarUrl: 'https://i.pravatar.cc/100',
+  };
+
+  const product: Product = {
+    id: 'p1',
+    name: 'Notebook',
+    price: 12.99,
+    description: 'A lined notebook for class.',
+    imageUrl: 'https://via.placeholder.com/150',
+    inStock: true,
+  };
+
+  return (
+    <div className="p-8 space-y-6">
+      <AlertBox type="info" message="This is an info alert!" />
+      <UserProfileCard user={user} showEmail showRole />
+      <ProductDisplay product={product} showDescription showStockStatus />
+    </div>
+  );
+};
 
 export default App;

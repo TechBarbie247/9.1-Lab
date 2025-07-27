@@ -13,6 +13,3 @@ export interface UserProfileCardProps {
   onEdit?: (userId: string) => void;
   children?: React.ReactNode;
 }
-export * from './user';
-export * from './product';
-export * from './alert';
